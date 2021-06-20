@@ -1,0 +1,342 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "1.0.0",
+    "title" : "Api Documentation"
+  },
+  "host" : "localhost",
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "EmployeeController"
+  }, {
+    "name" : "EmployerController"
+  }, {
+    "name" : "JobPositionController"
+  }, {
+    "name" : "UserController"
+  } ],
+  "schemes" : [ "http", "https" ],
+  "paths" : {
+    "/api/employees/add" : {
+      "post" : {
+        "tags" : [ "EmployeeController" ],
+        "operationId" : "add",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "firstName",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "lastName",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "birthDate",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "tcNo",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/Result"
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ]
+      }
+    },
+    "/api/employees/getall" : {
+      "get" : {
+        "tags" : [ "EmployeeController" ],
+        "operationId" : "getAll",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/DataResult"
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ]
+      }
+    },
+    "/api/employees/listEmployees" : {
+      "get" : {
+        "tags" : [ "EmployeeController" ],
+        "operationId" : "l?stEmployees",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Employee"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ]
+      }
+    },
+    "/api/job_positions/add" : {
+      "post" : {
+        "tags" : [ "JobPositionController" ],
+        "operationId" : "add",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "jobPosition",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/Result"
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ]
+      }
+    },
+    "/api/job_positions/getall" : {
+      "get" : {
+        "tags" : [ "JobPositionController" ],
+        "operationId" : "getAll",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/DataResult"
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ]
+      }
+    },
+    "/api/job_positions/listjobpositions" : {
+      "get" : {
+        "tags" : [ "JobPositionController" ],
+        "operationId" : "listJobPositions",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : { }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ]
+      }
+    },
+    "/api/users/add" : {
+      "post" : {
+        "tags" : [ "UserController" ],
+        "operationId" : "add",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "user",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/Result"
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ]
+      }
+    },
+    "/api/users/getall" : {
+      "get" : {
+        "tags" : [ "UserController" ],
+        "operationId" : "getAll",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/DataResult"
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ]
+      }
+    },
+    "/apie/employers/add" : {
+      "post" : {
+        "tags" : [ "EmployerController" ],
+        "operationId" : "add",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "companyName",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "websiteURL",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phoneNumber",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/Result"
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ]
+      }
+    },
+    "/apie/employers/getall" : {
+      "get" : {
+        "tags" : [ "EmployerController" ],
+        "operationId" : "getAll",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/DataResult"
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ]
+      }
+    },
+    "/apie/employers/listemployers" : {
+      "get" : {
+        "tags" : [ "EmployerController" ],
+        "operationId" : "listEmployers",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Employer"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "api_key" : {
+      "type" : "apiKey",
+      "name" : "Authorization",
+      "in" : "header"
+    }
+  },
+  "definitions" : {
+    "DataResult" : {
+      "properties" : {
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        }
+      }
+    },
+    "Employee" : {
+      "properties" : {
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "birthDate" : {
+          "type" : "string"
+        },
+        "tcNo" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Employer" : {
+      "properties" : {
+        "companyName" : {
+          "type" : "string"
+        },
+        "websiteURL" : {
+          "type" : "string"
+        },
+        "phoneNumber" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Result" : {
+      "properties" : {
+        "success" : {
+          "type" : "boolean"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
