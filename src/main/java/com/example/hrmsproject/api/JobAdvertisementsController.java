@@ -20,7 +20,7 @@ public class JobAdvertisementsController {
 
 
   @GetMapping("/getByEmployerId ")
-    public DataResult<List<JobAdvertisement>> getByEmployerId (int employerId){
+    public DataResult<List<JobAdvertisement>> getByEmployerId ( @RequestParam int employerId){ // get mapping de eğer parameetre varsa request param ver
         return this.jobAdvertisementService.getByEmployerId(employerId) ;
     }
  @GetMapping("/getAllByCreatedAtAndActive")
@@ -29,7 +29,7 @@ public class JobAdvertisementsController {
     }
 
     @GetMapping("/findAllById")
-     public DataResult<List<JobAdvertisement> > findAllById(int id){
+     public DataResult<List<JobAdvertisement> > findAllById(@RequestParam int id){
         return this.jobAdvertisementService.findAllById(id);
     }
 

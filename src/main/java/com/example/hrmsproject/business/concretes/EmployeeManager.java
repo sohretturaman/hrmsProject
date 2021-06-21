@@ -48,8 +48,8 @@ public class EmployeeManager implements EmployeeService {
     }
 
     @Override
-    public DataResult<List<Employee>> findAllByEmail(String mail) {
-        return new SuccessDataResult <List<Employee>>(this.employeeDao.findAllByEmail(mail));
+    public DataResult<List<Employee>> findAllByEmail(String email) {
+        return new SuccessDataResult <List<Employee>>(this.employeeDao.findAllByEmail(email));
     }
 
 

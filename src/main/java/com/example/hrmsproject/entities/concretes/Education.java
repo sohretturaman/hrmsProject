@@ -36,12 +36,13 @@ public class Education {
     }
 
     public Education(int id, String schoolName, String department, LocalDate startYearOfSchool,
-                     LocalDate endYearOfSchool, CandidateResume candidateResume) {
+                     LocalDate endYearOfSchool ,CandidateResume candidateResume   ) {
         this.id = id;
         this.schoolName = schoolName;
         this.department = department;
         this.startYearOfSchool = startYearOfSchool;
         this.endYearOfSchool = endYearOfSchool;
         this.candidateResume = candidateResume;
+
     }
 }

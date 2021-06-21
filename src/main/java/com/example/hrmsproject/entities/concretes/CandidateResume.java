@@ -1,5 +1,6 @@
 package com.example.hrmsproject.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -23,30 +24,35 @@ public class CandidateResume {
     @Column(name = "cover_letter")
     private String coverLetter ;
 
-    @OneToMany(mappedBy = "resumes")
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "candidateResume ")
     private List<Education> educations ;
 
-    @OneToMany(mappedBy = "resumes")
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "candidateResume")
     private List<Image> images ;
 
-    @OneToMany(mappedBy = "resumes")
-    private List<Technology> technologies ;
 
-    @OneToMany(mappedBy = "resumes")
+    @JsonIgnore
+    @OneToMany(mappedBy = "candidateResume")
+   private List<Technology> technologies ;
+
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "candidateResume")
     private List<WorkExperience> workExperiences ;
 
     public CandidateResume() {
     }
 
-    public CandidateResume(int id, String linkedIn, String github, String coverLetter, List<Education> educations,
-                           List<Image> images, List<Technology> technologies, List<WorkExperience> workExperiences) {
+    public CandidateResume(int id, String linkedIn, String github, String coverLetter
+                           ) {
         this.id = id;
         this.linkedIn = linkedIn;
         this.github = github;
         this.coverLetter = coverLetter;
-        this.educations = educations;
-        this.images = images;
-        this.technologies = technologies;
-        this.workExperiences = workExperiences;
+
     }
 }
